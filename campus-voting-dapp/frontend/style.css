@@ -1,0 +1,280 @@
+:root {
+  --text-color: #26352b;
+  --muted: #6b7b70;
+
+  --card-shadow:
+    0 4px 10px rgba(0, 66, 37, 0.07), 0 12px 25px rgba(0, 66, 37, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/*header*/
+
+header {
+  background: #004225;
+  color: #ffffff;
+  padding: 20px 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+header img {
+  width: 90px;
+  height: 65px;
+  object-fit: cover;
+}
+
+header h1 {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+header p {
+  color: #d9ead9;
+  font-size: 13px;
+}
+
+/*main content*/
+
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 35px auto;
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+/*dashboard*/
+
+.dashboard {
+  background: #ffffff;
+  padding: 28px;
+  margin: 30px 0;
+}
+
+#voterDashboard,
+#adminDashboard {
+  display: none;
+}
+
+#voterDashboard {
+  border-top: 6px solid #228b22;
+}
+
+#adminDashboard {
+  background: #fafcfa;
+  border-top: 6px solid #004225;
+}
+
+#adminDashboard .card,
+#adminDashboard .panel {
+  border-left: 4px solid #004225;
+}
+
+.dashboard h2 {
+  color: #004225;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.dashboard h3 {
+  color: #228b22;
+  margin: 20px 0 12px;
+}
+
+.card,
+.panel {
+  background: #ffffff;
+  border: 1px solid #dce7dc;
+  border-radius: 12px;
+  padding: 22px;
+  margin: 18px 0;
+  box-shadow: 0 3px 12px rgba(0, 66, 37, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover,
+.panel:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow);
+}
+
+/*wallet connection*/
+
+#walletStatus {
+  background: #f0f7f0;
+  color: #004225;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+/*forms and inputs*/
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 8px 0 16px;
+  border: 1px solid #c8d8c8;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #ffffff;
+  color: var(--text-color);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #228b22;
+  box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.12);
+}
+
+/*buttons*/
+
+button {
+  background: #228b22;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  margin: 5px 4px 5px 0;
+}
+
+button:hover {
+  background: #004225;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 66, 37, 0.18);
+}
+
+button:disabled {
+  background: #aab8aa;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/*candidate and results*/
+
+#candidateList,
+#resultsList,
+#pendingVotersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+#candidateList > div,
+#resultsList > div,
+#pendingVotersList > div {
+  background: #f0f7f0;
+  border: 1px solid #dce7dc;
+  border-left: 5px solid #228b22;
+  padding: 18px;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+/*election info*/
+
+#electionStatus,
+#totalVotes,
+#registrationStatus,
+#voterStatus {
+  background: #f0f7f0;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  color: #004225;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/*dividers */
+
+hr {
+  border: none;
+  border-top: 1px solid #dce7dc;
+  margin: 24px 0;
+}
+
+/*footer*/
+
+footer {
+  background: #004225;
+  color: #ffffff;
+  text-align: center;
+  padding: 22px;
+  margin-top: 50px;
+  font-size: 13px;
+}
+
+/*responsive design*/
+
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 21px;
+  }
+
+  main {
+    width: 94%;
+    margin: 20px auto;
+  }
+
+  .dashboard {
+    padding: 18px;
+  }
+
+  .dashboard h2 {
+    font-size: 21px;
+  }
+
+  button {
+    width: 100%;
+    margin: 6px 0;
+  }
+
+  #candidateList,
+  #resultsList,
+  #pendingVotersList {
+    grid-template-columns: 1fr;
+  }
+}
